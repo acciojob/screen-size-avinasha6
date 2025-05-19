@@ -4,11 +4,31 @@
 
 <head>
 	<link rel="stylesheet" href="styles.css">
+	<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
 	<!-- the entire body must be written by student -->
+	<div id="sizeInfo">
+    <h1>Width: 0 and Height: 0</h1>
+  </div>
     <script type="text/javascript" src="./script.js">
+		function updateSize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const sizeDiv = document.getElementById("sizeInfo");
+      sizeDiv.innerHTML = `<h1>Width: ${width} and Height: ${height}</h1>`;
+    }
+
+    updateSize();
+
+    window.addEventListener("resize", updateSize);
 </script>
 
 </body>
